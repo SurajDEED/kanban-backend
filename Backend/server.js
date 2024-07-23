@@ -9,14 +9,13 @@ import Board from './Schema/Board.js';
 import Task from './Schema/TaskSchema.js';
 import subtaskSchema from './Schema/Subtask.js';
 import Subtask from './Schema/Subtask.js';
-
+config();
 const app = express();
-
 app.use(cors());
 app.use(json());
 app.use(bodyParser.json());
 
-connect("mongodb://localhost:27017/taskapp")
+connect(process.env.MONGODB_LINK)
     .then(() => console.log('MongoDB connected'))
     .catch((err) => console.log(err));
 
