@@ -9,7 +9,6 @@ import Board from './Schema/Board.js';
 import Task from './Schema/TaskSchema.js';
 import subtaskSchema from './Schema/Subtask.js';
 import Subtask from './Schema/Subtask.js';
-config();
 
 const app = express();
 
