@@ -30,6 +30,7 @@ app.post('/saveData', async (req, res) => {
     const { auth0Id, email } = req.body;
     try {
         let user = await User.findOne({ auth0Id });
+        console.log("Request Made");
 
         if (!user) {
             user = new User({ auth0Id, email });
@@ -38,6 +39,7 @@ app.post('/saveData', async (req, res) => {
 
         res.status(200).json(user);
     } catch (error) {
+        console.log(error.message);
         res.status(500).json({ error: error.message });
     }
 });
@@ -74,6 +76,7 @@ app.post('/boards', async (req, res) => {
         res.status(200).json(board);
 
     } catch (e) {
+        console.log(e.message);
         res.status(500).json({ error: e.message });
     }
 })
