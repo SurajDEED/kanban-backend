@@ -3,6 +3,7 @@
 import express, { json } from 'express';
 import { connect } from 'mongoose';
 import cors from 'cors';
+import { config } from 'dotenv';
 import User from './Schema/UserSchema.js';
 import bodyParser from 'body-parser';
 import Board from './Schema/Board.js';
