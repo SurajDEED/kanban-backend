@@ -3,14 +3,14 @@
 import express, { json } from 'express';
 import { connect } from 'mongoose';
 import cors from 'cors';
-import { config } from 'dotenv';
+
 import User from './Schema/UserSchema.js';
 import bodyParser from 'body-parser';
 import Board from './Schema/Board.js';
 import Task from './Schema/TaskSchema.js';
 import subtaskSchema from './Schema/Subtask.js';
 import Subtask from './Schema/Subtask.js';
-config();
+
 const app = express();
 app.use(cors());
 app.use(json());
